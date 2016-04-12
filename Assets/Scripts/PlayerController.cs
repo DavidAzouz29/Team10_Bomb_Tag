@@ -22,6 +22,8 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+    public const uint MAX_PLAYERS = 4;
+
     // PRIVATE VARIABLES
     public float playerSpeed;
     public float speedBoost;
@@ -63,6 +65,14 @@ public class PlayerController : MonoBehaviour
         //setting our current state to alive
         m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_ALIVE;
 
+        int randSelection = (int)Random.Range(0, MAX_PLAYERS - 1);
+        Debug.Log("Player: " + randSelection);
+
+        // Choose someone to allocate the bomb too
+        if (m_playerID == randSelection)
+        {
+            m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_BOMB;
+        }
     }
 	
 	// Update is called once per frame
@@ -73,9 +83,6 @@ public class PlayerController : MonoBehaviour
         float moveVertical = Input.GetAxis(verticalAxis);
 
         Vector3 movementDirection = new Vector3(moveHorizontal, 0.0f, moveVertical);
-
-        //TODO: don't rotate bomb?
-        //GetComponentInChildren<>
 
         //Switches between player states
         switch (m_eCurrentPlayerState)
@@ -120,6 +127,11 @@ public class PlayerController : MonoBehaviour
     public E_PLAYER_STATE ChangeStateDead()
     {
         return m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_DEAD;
+    }
+    
+    public void SetPlayerID(uint a_uiPlayerID)
+    {
+        m_playerID = a_uiPlayerID;
     }
 
     public void SetPlayerID(uint a_uiPlayerID)
