@@ -8,10 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458316}
-  - 199: {fileID: 19973084}
-  - 198: {fileID: 19894760}
+  - 199: {fileID: 19993238}
+  - 198: {fileID: 19839230}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FireParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,12 +24,13 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 457682}
+  - 224: {fileID: 22414652}
   - 33: {fileID: 3305088}
   - 23: {fileID: 2311440}
   - 95: {fileID: 9528678}
+  - 222: {fileID: 22287700}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: BombMesh
   m_TagString: Bomb
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -124,12 +125,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.6, z: 0}
+  m_LocalPosition: {x: -0, y: 0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 499884}
   - {fileID: 451484}
-  - {fileID: 457682}
+  - {fileID: 22414652}
   - {fileID: 401600}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -145,19 +146,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 425900}
   m_RootOrder: 1
---- !u!4 &457682
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159418}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 458316}
-  m_Father: {fileID: 425900}
-  m_RootOrder: 2
 --- !u!4 &458316
 Transform:
   m_ObjectHideFlags: 1
@@ -168,7 +156,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.24, z: -0.003}
   m_LocalScale: {x: 0.23614669, y: 0.23614694, z: 0.23614694}
   m_Children: []
-  m_Father: {fileID: 457682}
+  m_Father: {fileID: 22414652}
   m_RootOrder: 0
 --- !u!4 &499884
 Transform:
@@ -376,8 +364,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 100
   speedBoost: 5
-  verticalAxis: Vertical
-  horizontalAxis: Horizontal
+  r_bomb: {fileID: 159418}
+  r_camera: {fileID: 0}
+  verticalAxis: P1_Vertical
+  horizontalAxis: P1_Horizontal
+  m_playerID: 0
+  m_eCurrentPlayerState: 0
 --- !u!135 &13512234
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -388,16 +380,16 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.03
   m_Center: {x: 0, y: 0, z: 0}
---- !u!198 &19894760
+--- !u!198 &19839230
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131622}
   serializedVersion: 2
-  lengthInSec: 3
+  lengthInSec: 1
   startDelay:
     scalar: 0
     maxCurve:
@@ -444,7 +436,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -479,7 +471,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 10
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -605,7 +597,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 2566914047
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 1
@@ -749,15 +741,15 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 50
+    maxNumParticles: 1000
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
     enabled: 1
-    type: 8
-    radius: 0.67
-    angle: 23.34
-    length: 1.9672973
+    type: 4
+    radius: 1
+    angle: 25
+    length: 5
     boxX: 1
     boxY: 1
     boxZ: 1
@@ -770,7 +762,7 @@ ParticleSystem:
     m_MeshNormalOffset: 0
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
-    randomDirection: 1
+    randomDirection: 0
   EmissionModule:
     enabled: 1
     serializedVersion: 2
@@ -810,7 +802,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    cnt0: 25
+    cnt0: 30
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -818,11 +810,11 @@ ParticleSystem:
     cntmax1: 30
     cntmax2: 30
     cntmax3: 30
-    time0: 0.2
+    time0: 0
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 1
+    m_BurstCount: 0
   SizeModule:
     enabled: 0
     curve:
@@ -933,7 +925,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     curve:
-      scalar: 0.7853981
+      scalar: 0.7853982
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -974,7 +966,7 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4278251007
+          rgba: 4278253823
         key1:
           serializedVersion: 2
           rgba: 4278190335
@@ -1108,7 +1100,7 @@ ParticleSystem:
     cycles: 1
     randomRow: 1
   VelocityModule:
-    enabled: 1
+    enabled: 0
     x:
       scalar: 0
       maxCurve:
@@ -1214,7 +1206,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    inWorldSpace: 1
+    inWorldSpace: 0
   InheritVelocityModule:
     enabled: 0
     m_Mode: 0
@@ -1254,7 +1246,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
   ForceModule:
-    enabled: 1
+    enabled: 0
     x:
       scalar: 0
       maxCurve:
@@ -1360,7 +1352,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    inWorldSpace: 1
+    inWorldSpace: 0
     randomizePerFrame: 0
   ExternalForcesModule:
     enabled: 0
@@ -1621,7 +1613,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     curve:
-      scalar: 0.7853981
+      scalar: 0.7853982
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1663,7 +1655,7 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4278255601
+          rgba: 4294967295
         key1:
           serializedVersion: 2
           rgba: 4294967295
@@ -1889,7 +1881,7 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19973084
+--- !u!199 &19993238
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1899,7 +1891,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: ff7ccf485882afc4d8b11b6facac3f0c, type: 2}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1930,6 +1922,30 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+--- !u!222 &22287700
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159418}
+--- !u!224 &22414652
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 458316}
+  m_Father: {fileID: 425900}
+  m_RootOrder: 2
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
