@@ -122,6 +122,11 @@ public class PlayerController : MonoBehaviour
         return m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_DEAD;
     }
 
+    public void SetPlayerID(uint a_uiPlayerID)
+    {
+        m_playerID = a_uiPlayerID;
+    }
+
     void OnCollisionExit(Collision a_collision)
     {
         //if current players state is "BOMB"
