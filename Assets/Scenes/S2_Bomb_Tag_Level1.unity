@@ -602,8 +602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d5834d9aa52294582de482d63069cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r_ShaderSlime: {fileID: 0}
-  r_MeshSlime: {fileID: 0}
+  r_MeshSlime: {fileID: 389071885}
+  uiTilingX: 25
 --- !u!1 &443144038
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,8 +966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d5834d9aa52294582de482d63069cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r_ShaderSlime: {fileID: 0}
-  r_MeshSlime: {fileID: 0}
+  r_MeshSlime: {fileID: 799642682}
+  uiTilingX: 25
 --- !u!1 &1018638787 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: cf9b9e4b3f72fff479b26dbe1b7f8205, type: 3}
@@ -1182,8 +1182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d5834d9aa52294582de482d63069cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r_ShaderSlime: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
   r_MeshSlime: {fileID: 1576143395}
+  uiTilingX: 25
 --- !u!1 &1691281354
 GameObject:
   m_ObjectHideFlags: 0
