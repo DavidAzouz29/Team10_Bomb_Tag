@@ -17,6 +17,7 @@
 /// ----------------------------------
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour
@@ -27,14 +28,14 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed;
     public float speedBoost = 6;
     public GameObject r_bomb;
-    public GameObject r_bombParticleEffect;
+    public GameObject r_bombExplosionParticleEffect;
     //public Camera r_camera;
-    public string verticalAxis = "P1_Vertical";
-    public string horizontalAxis = "P1_Horizontal";
+    public string verticalAxis = "Vertical";
+    public string horizontalAxis = "Horizontal";
 
     // A way to identidy players
     [SerializeField] private uint m_playerID = 0;
-
+    public Bomb c_bomb;
     // PRIVATE VARIABLES
     Rigidbody m_rigidBody;
 
@@ -76,14 +77,13 @@ public class PlayerController : MonoBehaviour
             {
                 verticalAxis = "P" + (i + 1) + "_Vertical";
                 horizontalAxis = "P" + (i + 1) + "_Horizontal";
-
             }
             // Choose someone to allocate the bomb too
-            /*if (m_playerID == randSelection && !isBombAllocated)
+            if (m_playerID == 2)//c_bomb.randSelection) // TODO: randSelection
             {
                 m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_BOMB;
-                isBombAllocated = true;
-            }*/
+                this.gameObject.tag = "HasBomb";
+            } //*/
         }        
     }
 	
@@ -111,6 +111,10 @@ public class PlayerController : MonoBehaviour
                 {
                     m_rigidBody.AddForce(movementDirection * (playerSpeed + speedBoost) * Time.deltaTime);
                     r_bomb.SetActive(true);
+                    /* if(c_bomb.bombTime <= 0)
+                    {
+                        m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_DEAD;
+                    } */
                     //Debug.Log("Bomb!");
                     break;
                 }
@@ -118,9 +122,9 @@ public class PlayerController : MonoBehaviour
             case E_PLAYER_STATE.E_PLAYER_STATE_DEAD:
                 {
                     // Particle effect bomb (explosion)
-                    r_bombParticleEffect.SetActive(true);
+                    r_bombExplosionParticleEffect.SetActive(true);
                     // actions to perform after a certain time
-                    uint uiBombEffectTimer = 6;
+                    uint uiBombEffectTimer = 2;
                     Invoke("BombEffectDead", uiBombEffectTimer);
                     Debug.Log("Dead :(");
                     break;
@@ -131,22 +135,43 @@ public class PlayerController : MonoBehaviour
                     break;
                 }
         }
+
+        //TODO: change to random number
+        if(m_playerID == 2 && Time.deltaTime >= 60)
+        {
+            m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_DEAD;
+        }
 	}
 
     void BombEffectDead()
     {
         r_bomb.SetActive(false);
         Destroy(this.gameObject);
+        //r_gameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+        // After three seconds, return to menu
+        Invoke("ReturnToMenu", 1);
+        Debug.Log("Bomb Effect");
+    }
+
+    void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public E_PLAYER_STATE ChangeStateBomb()
     {
-        return m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_BOMB;
+        return E_PLAYER_STATE.E_PLAYER_STATE_BOMB;
     }
 
     public E_PLAYER_STATE ChangeStateDead()
     {
-        return m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_DEAD;
+        return E_PLAYER_STATE.E_PLAYER_STATE_DEAD;
+    }
+
+    public void SetPlayerStateDead(uint a_uiPlayerStateDead)
+    {
+        m_eCurrentPlayerState = (E_PLAYER_STATE)a_uiPlayerStateDead;
     }
 
     public uint GetPlayerID()
@@ -159,21 +184,26 @@ public class PlayerController : MonoBehaviour
         m_playerID = a_uiPlayerID; 
     }
 
-    void OnCollisionExit(Collision a_collision)
+    void OnCollisionStay(Collision a_collision)
     {
         //if current players state is "BOMB"
-        if (m_eCurrentPlayerState == E_PLAYER_STATE.E_PLAYER_STATE_BOMB)
+        if (m_eCurrentPlayerState == E_PLAYER_STATE.E_PLAYER_STATE_BOMB &&
+            a_collision.collider.GetComponent<PlayerController>().m_eCurrentPlayerState == E_PLAYER_STATE.E_PLAYER_STATE_ALIVE)
         {
             //And is colliding with another player
             if (a_collision.collider.tag == "Player")
             {
-                //change the state of ourselves to alive
-                m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_ALIVE;
                 // change the other players state
                 a_collision.collider.GetComponent<PlayerController>().m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_BOMB;
+                //change the state of ourselves to alive
+                m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_ALIVE;
                 //r_camera.fieldOfView = Mathf.Lerp(70, 60, Time.time);
-                Debug.Log("CHECK IF COLLIDED");
+                Debug.Log("CHECK IF COLLIDED: OnCollExit");
             }
+        }
+        else
+        {
+            Debug.Log("GLHF");
         }
     }
 

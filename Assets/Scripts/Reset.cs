@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Reset : MonoBehaviour {
@@ -16,10 +17,11 @@ public class Reset : MonoBehaviour {
 	
 	}
 
-    public void ResetPos()
+    public void BackToMenu()
     {
-        DefaultPos.y = 0.6f;
-        r_player.transform.position = DefaultPos;
+        SceneManager.LoadScene(0);
+        //DefaultPos.y = 0.6f;
+        //r_player.transform.position = DefaultPos;
         //r_player.transform.rotation = DefaultPos;
     }
 }

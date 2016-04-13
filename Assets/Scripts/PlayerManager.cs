@@ -38,22 +38,21 @@ public class PlayerManager : MonoBehaviour
     // PRIVATE VARIABLES
     //----------------------------------
     private float fTerrRadius = 0.66f;
-    private uint randSelection;
 
     // Use this for initialization
     void Start ()
     {
         v3PlayerPosition.y = 0.39f;
 
+        float fTransparency = 0.20f;
+
         // Array of colors
-        colorsArray[0] = new Vector4(Color.red.r,   Color.red.g,    Color.red.b,    0.30f);
-        colorsArray[1] = new Vector4(Color.yellow.r,Color.yellow.g, Color.yellow.b, 0.30f);
-        colorsArray[2] = new Vector4(Color.green.r, Color.green.g,  Color.green.b,  0.30f);
-        colorsArray[3] = new Vector4(Color.blue.r,  Color.blue.g,   Color.blue.b,   0.30f);
+        colorsArray[0] = new Vector4(Color.red.r,   Color.red.g,    Color.red.b,    fTransparency);
+        colorsArray[1] = new Vector4(Color.yellow.r,Color.yellow.g, Color.yellow.b, fTransparency);
+        colorsArray[2] = new Vector4(Color.green.r, Color.green.g,  Color.green.b,  fTransparency);
+        colorsArray[3] = new Vector4(Color.blue.r,  Color.blue.g,   Color.blue.b,   fTransparency);
 
-        randSelection = (uint)Random.Range(0, MAX_PLAYERS - 1);
-        Debug.Log("Player: " + randSelection);
-
+        
         //Loop through and create our players.
         for (uint i = 0; i < MAX_PLAYERS; ++i)
         {
@@ -71,15 +70,15 @@ public class PlayerManager : MonoBehaviour
 
             uiPlayerArray[i] = r_PlayerController;
             Debug.Log(v3PlayerPosition);
-            /* Select a player to assign the bomb to
-            if (i == randSelection)
+            // Select a player to assign the bomb to
+            /*if (i == randSelection)
             {
-                r_PlayerController.ChangeStateBomb();
-            } */
+                r_PlayerController.m_eCurrentPlayerState = r_PlayerController.ChangeStateBomb();
+            } //*/
             /* r_PlayerController = GetComponent<PlayerController>();
             //r_PlayerController.SetPlayerID(i); */
         }
-        uiPlayerArray[(int)randSelection].ChangeStateBomb();
+        //uiPlayerArray[(int)randSelection].ChangeStateBomb();
     }
 	
 	// Update is called once per frame
