@@ -1,9 +1,50 @@
 fileFormatVersion: 2
 guid: fabf470ed6d9a1b4fb6aca7d9bd7eac3
-timeCreated: 1460512683
+timeCreated: 1460514065
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Spark_sprite_0
+    21300002: Spark_sprite_1
+    21300004: Spark_sprite_2
+    21300006: Spark_sprite_3
+    21300008: Spark_sprite_4
+    21300010: Spark_sprite_5
+    21300012: Spark_sprite_6
+    21300014: Spark_sprite_7
+    21300016: Spark_sprite_8
+    21300018: Spark_sprite_9
+    21300020: Spark_sprite_10
+    21300022: Spark_sprite_11
+    21300024: Spark_sprite_12
+    21300026: Spark_sprite_13
+    21300028: Spark_sprite_14
+    21300030: Spark_sprite_15
+    21300032: Spark_sprite_16
+    21300034: Spark_sprite_17
+    21300036: Spark_sprite_18
+    21300038: Spark_sprite_19
+    21300040: Spark_sprite_20
+    21300042: Spark_sprite_21
+    21300044: Spark_sprite_22
+    21300046: Spark_sprite_23
+    21300048: Spark_sprite_24
+    21300050: Spark_sprite_25
+    21300052: Spark_sprite_26
+    21300054: Spark_sprite_27
+    21300056: Spark_sprite_28
+    21300058: Spark_sprite_29
+    21300060: Spark_sprite_30
+    21300062: Spark_sprite_31
+    21300064: Spark_sprite_32
+    21300066: Spark_sprite_33
+    21300068: Spark_sprite_34
+    21300070: Spark_sprite_35
+    21300072: Spark_sprite_36
+    21300074: Spark_sprite_37
+    21300076: Spark_sprite_38
+    21300078: Spark_sprite_39
+    21300080: Spark_sprite_40
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,26 +71,743 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-  alphaIsTransparency: 0
-  textureType: -1
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Spark_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 978
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 896
+        width: 109
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 49}
+        - {x: -54.5, y: 34}
+        - {x: -54.5, y: -35}
+        - {x: -46.5, y: -34}
+        - {x: -42.5, y: -32}
+        - {x: -41.5, y: -29}
+        - {x: -44.5, y: -39}
+        - {x: -49.5, y: -45}
+        - {x: -51.5, y: -49}
+        - {x: 43.5, y: -49}
+        - {x: 54.5, y: -45}
+        - {x: 54.5, y: 49}
+      - - {x: 46.5, y: -41}
+        - {x: 44.5, y: -43}
+        - {x: 44.5, y: -49}
+        - {x: 54.5, y: -49}
+        - {x: 54.5, y: -43}
+        - {x: 52.5, y: -41}
+      - - {x: 26.5, y: 49}
+        - {x: 15.5, y: 40}
+        - {x: 15.5, y: 28}
+        - {x: 25.5, y: 28}
+        - {x: 48.5, y: 47}
+        - {x: 48.5, y: 49}
+      - - {x: -42.5, y: 49}
+        - {x: -54.5, y: 49}
+        - {x: -54.5, y: 39}
+        - {x: -49.5, y: 31}
+        - {x: -39.5, y: 31}
+        - {x: -36.5, y: 34}
+        - {x: -36.5, y: 44}
+    - name: Spark_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 975
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 984
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 900
+        width: 102
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: -32}
+        - {x: 22, y: -35}
+        - {x: 22, y: -46}
+        - {x: 23, y: -47}
+        - {x: 48, y: -47}
+        - {x: 48, y: -45}
+        - {x: 34, y: -32}
+      - - {x: -46, y: 47}
+        - {x: -51, y: 32}
+        - {x: -51, y: -47}
+        - {x: 51, y: -47}
+        - {x: 51, y: 47}
+      - - {x: 37, y: 14}
+        - {x: 36, y: 13}
+        - {x: 36, y: 7}
+        - {x: 37, y: 2}
+        - {x: 47, y: -1}
+        - {x: 51, y: -1}
+        - {x: 51, y: 14}
+    - name: Spark_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 888
+        width: 88
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: -39.5}
+        - {x: -25, y: -43.5}
+        - {x: -26, y: -51.5}
+        - {x: -26, y: -60.5}
+        - {x: -17, y: -60.5}
+        - {x: -10, y: -52.5}
+        - {x: -10, y: -40.5}
+        - {x: -12, y: -39.5}
+      - - {x: 30, y: 26.5}
+        - {x: 19, y: 60.5}
+        - {x: -15, y: 60.5}
+        - {x: -44, y: 39.5}
+        - {x: -44, y: -20.5}
+        - {x: -38, y: -37.5}
+        - {x: -13, y: -60.5}
+        - {x: 17, y: -60.5}
+        - {x: 44, y: -50.5}
+        - {x: 44, y: 26.5}
+        - {x: 43, y: 27.5}
+      - - {x: 27, y: 48.5}
+        - {x: 17, y: 35.5}
+        - {x: 17, y: 29.5}
+        - {x: 21, y: 26.5}
+        - {x: 25, y: 26.5}
+        - {x: 37, y: 37.5}
+        - {x: 38, y: 40.5}
+        - {x: 38, y: 48.5}
+    - name: Spark_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 909
+        width: 112
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 46}
+        - {x: -29, y: 46}
+        - {x: -56, y: 30}
+        - {x: -56, y: -28}
+        - {x: -47, y: -46}
+        - {x: 41, y: -46}
+        - {x: 56, y: -25}
+        - {x: 56, y: 20}
+        - {x: 42, y: 42}
+    - name: Spark_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 955
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 904
+        width: 79
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.5, y: -15}
+        - {x: 33.5, y: -16}
+        - {x: 39.5, y: -15}
+        - {x: 39.5, y: 40}
+        - {x: -23.5, y: 40}
+        - {x: -29.5, y: 39}
+        - {x: -39.5, y: -10}
+        - {x: -39.5, y: -31}
+        - {x: -17.5, y: -37}
+        - {x: -12.5, y: -38}
+        - {x: 0.5, y: -40}
+        - {x: 19.5, y: -40}
+        - {x: 29.5, y: -29}
+        - {x: 29.5, y: -21}
+        - {x: 26.5, y: -15}
+      - - {x: -33.5, y: 25}
+        - {x: -39.5, y: 25}
+        - {x: -39.5, y: 9}
+        - {x: -34.5, y: 9}
+        - {x: -30.5, y: 11}
+        - {x: -29.5, y: 14}
+        - {x: -29.5, y: 20}
+    - name: Spark_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 956
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 947
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 935
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 903
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 877
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 892
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 891
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 871
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 884
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 709
+        width: 107
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: -66}
+        - {x: -29.5, y: -67}
+        - {x: -17.5, y: -67}
+        - {x: -17.5, y: -66}
+        - {x: -20.5, y: -63}
+        - {x: -26.5, y: -63}
+      - - {x: 46.5, y: -23}
+        - {x: 53.5, y: -15}
+        - {x: 53.5, y: -6}
+        - {x: 50.5, y: 0}
+        - {x: 33.5, y: -1}
+        - {x: 23.5, y: -6}
+        - {x: 16.5, y: -12}
+        - {x: 25.5, y: -5}
+        - {x: 38.5, y: 3}
+        - {x: 51.5, y: 14}
+        - {x: 44.5, y: 45}
+        - {x: 36.5, y: 45}
+        - {x: 30.5, y: 42}
+        - {x: -11.5, y: 24}
+        - {x: -14.5, y: 19}
+        - {x: -21.5, y: 45}
+        - {x: -31.5, y: 45}
+        - {x: -51.5, y: 28}
+        - {x: -53.5, y: 25}
+        - {x: -53.5, y: -66}
+        - {x: -50.5, y: -67}
+        - {x: 27.5, y: -67}
+        - {x: 53.5, y: -38}
+        - {x: 53.5, y: -27}
+        - {x: 49.5, y: -24}
+      - - {x: -36.5, y: 67}
+        - {x: -37.5, y: 64}
+        - {x: -37.5, y: 55}
+        - {x: -29.5, y: 43}
+        - {x: -20.5, y: 34}
+        - {x: -8.5, y: 34}
+        - {x: -8.5, y: 45}
+        - {x: -15.5, y: 62}
+        - {x: -22.5, y: 67}
+    - name: Spark_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 788
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 804
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 804
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 804
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 720
+        width: 147
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73.5, y: 62}
+        - {x: -73.5, y: -62}
+        - {x: 13.5, y: -62}
+        - {x: 73.5, y: -42}
+        - {x: 73.5, y: 20}
+        - {x: -19.5, y: 62}
+      - - {x: -73.5, y: 42}
+        - {x: -73.5, y: 23}
+        - {x: -70.5, y: 21}
+        - {x: -57.5, y: 21}
+        - {x: -52.5, y: 22}
+        - {x: -52.5, y: 35}
+        - {x: -62.5, y: 42}
+    - name: Spark_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 724
+        width: 112
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 34}
+        - {x: -6, y: 44}
+        - {x: -56, y: 44}
+        - {x: -56, y: -36}
+        - {x: -26, y: -44}
+        - {x: -22, y: -42}
+        - {x: -14, y: -37}
+        - {x: 9, y: -44}
+        - {x: 56, y: -44}
+        - {x: 56, y: -14}
+        - {x: 36, y: 19}
+      - - {x: 35, y: 39}
+        - {x: 26, y: 36}
+        - {x: 26, y: 22}
+        - {x: 27, y: 20}
+        - {x: 36, y: 20}
+        - {x: 42, y: 21}
+        - {x: 48, y: 27}
+        - {x: 49, y: 31}
+        - {x: 49, y: 39}
+    - name: Spark_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 717
+        width: 112
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 53.5}
+        - {x: -40, y: 41.5}
+        - {x: -56, y: 27.5}
+        - {x: -56, y: 0.5}
+        - {x: -30, y: -49.5}
+        - {x: -24, y: -50.5}
+        - {x: -18, y: -50.5}
+        - {x: -11, y: -53.5}
+        - {x: 39, y: -53.5}
+        - {x: 56, y: -48.5}
+        - {x: 56, y: 53.5}
+    - name: Spark_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 784
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 716
+        width: 97
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48.5, y: 21.5}
+        - {x: 41.5, y: 42.5}
+        - {x: -48.5, y: 42.5}
+        - {x: -48.5, y: -42.5}
+        - {x: 19.5, y: -42.5}
+        - {x: 21.5, y: -27.5}
+        - {x: 31.5, y: -26.5}
+        - {x: 48.5, y: -15.5}
+    - name: Spark_sprite_28
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 755
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_29
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 700
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_30
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 551
+        width: 89
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.5, y: 51}
+        - {x: -44.5, y: 51}
+        - {x: -44.5, y: -50}
+        - {x: -36.5, y: -51}
+        - {x: 23.5, y: -51}
+        - {x: 35.5, y: -36}
+        - {x: 44.5, y: -19}
+        - {x: 44.5, y: 31}
+    - name: Spark_sprite_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 643
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_32
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 648
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_33
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 627
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_34
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 560
+        width: 108
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 46}
+        - {x: -54, y: 14}
+        - {x: -54, y: -13}
+        - {x: -34, y: -46}
+        - {x: 28, y: -46}
+        - {x: 54, y: -37}
+        - {x: 54, y: 36}
+        - {x: 50, y: 46}
+      - - {x: -54, y: 46}
+        - {x: -54, y: 31}
+        - {x: -38, y: 19}
+        - {x: -23, y: 19}
+        - {x: -21, y: 23}
+        - {x: -21, y: 30}
+        - {x: -42, y: 46}
+    - name: Spark_sprite_35
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 531
+        width: 109
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.5, y: 68.5}
+        - {x: -1.5, y: 63.5}
+        - {x: -54.5, y: 61.5}
+        - {x: -54.5, y: -17.5}
+        - {x: -53.5, y: -32.5}
+        - {x: -9.5, y: -68.5}
+        - {x: 33.5, y: -68.5}
+        - {x: 54.5, y: -57.5}
+        - {x: 54.5, y: 40.5}
+        - {x: 26.5, y: 68.5}
+    - name: Spark_sprite_36
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 619
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_37
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 548
+        width: 91
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.5, y: 48}
+        - {x: -45.5, y: 40}
+        - {x: -45.5, y: -48}
+        - {x: 45.5, y: -48}
+        - {x: 45.5, y: 48}
+      - - {x: 42.5, y: -30}
+        - {x: 44.5, y: -32}
+        - {x: 45.5, y: -32}
+        - {x: 45.5, y: -25}
+        - {x: 42.5, y: -26}
+      - - {x: -45.5, y: -3}
+        - {x: -45.5, y: -16}
+        - {x: -40.5, y: -14}
+        - {x: -39.5, y: -13}
+        - {x: -39.5, y: -8}
+        - {x: -41.5, y: -3}
+      - - {x: -39.5, y: 48}
+        - {x: -38.5, y: 45}
+        - {x: -32.5, y: 45}
+        - {x: -30.5, y: 47}
+        - {x: -30.5, y: 48}
+    - name: Spark_sprite_38
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 556
+        width: 96
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25, y: 44}
+        - {x: -35, y: 44}
+        - {x: -48, y: 20}
+        - {x: -48, y: -26}
+        - {x: -42, y: -27}
+        - {x: -40, y: -27}
+        - {x: -48, y: -29}
+        - {x: -48, y: -39}
+        - {x: -37, y: -44}
+        - {x: 26, y: -44}
+        - {x: 48, y: -23}
+        - {x: 48, y: 33}
+    - name: Spark_sprite_39
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 582
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Spark_sprite_40
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 560
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 

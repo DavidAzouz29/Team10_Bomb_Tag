@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     public float speedBoost = 6;
     public GameObject r_bomb;
     public GameObject r_bombParticleEffect;
-    public Camera r_camera;
+    //public Camera r_camera;
     public string verticalAxis = "P1_Vertical";
     public string horizontalAxis = "P1_Horizontal";
 
@@ -154,10 +154,10 @@ public class PlayerController : MonoBehaviour
         return m_playerID;
     }
 
-    /*public void SetPlayerID(uint a_uiPlayerID)
+    public void SetPlayerID(uint a_uiPlayerID)
     {
-        m_playerID = a_uiPlayerID;  //was causing an error
-    }*/
+        m_playerID = a_uiPlayerID; 
+    }
 
     void OnCollisionExit(Collision a_collision)
     {
@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
                 m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_ALIVE;
                 // change the other players state
                 a_collision.collider.GetComponent<PlayerController>().m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_BOMB;
-                r_camera.fieldOfView = Mathf.Lerp(70, 60, Time.time);
+                //r_camera.fieldOfView = Mathf.Lerp(70, 60, Time.time);
                 Debug.Log("CHECK IF COLLIDED");
             }
         }

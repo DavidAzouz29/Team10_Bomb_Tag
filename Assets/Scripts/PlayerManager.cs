@@ -32,12 +32,12 @@ public class PlayerManager : MonoBehaviour
 
     public Color[] colorsArray = new Color[MAX_PLAYERS];
     public PlayerController[] uiPlayerArray = new PlayerController[MAX_PLAYERS]; //TODO: private
+    public PlayerController r_PlayerController; // Referance to a player.
 
     //----------------------------------
     // PRIVATE VARIABLES
     //----------------------------------
-    private PlayerController r_PlayerController; // Referance to a player.
-    private float fTerrRadius = 0.8f;
+    private float fTerrRadius = 0.66f;
     private uint randSelection;
 
     // Use this for initialization
