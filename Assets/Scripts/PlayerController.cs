@@ -134,10 +134,10 @@ public class PlayerController : MonoBehaviour
         m_playerID = a_uiPlayerID;
     }
 
-    public void SetPlayerID(uint a_uiPlayerID)
+    /*public void SetPlayerID(uint a_uiPlayerID)
     {
-        m_playerID = a_uiPlayerID;
-    }
+        m_playerID = a_uiPlayerID;  //was causing an error
+    }*/
 
     void OnCollisionExit(Collision a_collision)
     {

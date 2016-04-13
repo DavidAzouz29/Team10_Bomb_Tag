@@ -21,4 +21,15 @@ public class PlayButton : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
+
+    void OnMouseEnter()
+    {
+        GetComponentInChildren<Light>().enabled = true;
+        
+    }
+
+    void OnMouseExit()
+    {
+        GetComponentInChildren<Light>().enabled = false;
+    }
 }

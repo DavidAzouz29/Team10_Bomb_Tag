@@ -12,13 +12,13 @@ public class QuitButton : MonoBehaviour
         }
     }
 
-    /*void OnMouseEnter()
+    void OnMouseEnter()
     {
-        GetComponent<Light>().enabled = true;
+        GetComponentInChildren<Light>().enabled = true;
     }
 
     void OnMouseExit()
     {
-        GetComponent<Light>().enabled = false;
-    }*/
+        GetComponentInChildren<Light>().enabled = false;
+    }
 }
