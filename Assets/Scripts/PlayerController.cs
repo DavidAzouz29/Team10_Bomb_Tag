@@ -8,7 +8,6 @@
 /// Brief: Player Controller class that controls the player.
 /// viewed: https://unity3d.com/learn/tutorials/projects/roll-a-ball/moving-the-player
 /// 
-/// 
 /// *Edit*
 /// - Player state machine - 11/04/2016
 /// - More than one player added - 12/4/2016
@@ -26,8 +25,9 @@ public class PlayerController : MonoBehaviour
 
     // PRIVATE VARIABLES
     public float playerSpeed;
-    public float speedBoost;
+    public float speedBoost = 6;
     public GameObject r_bomb;
+    public GameObject r_bombParticleEffect;
     public Camera r_camera;
     public string verticalAxis = "P1_Vertical";
     public string horizontalAxis = "P1_Horizontal";
@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
 
     public E_PLAYER_STATE m_eCurrentPlayerState;
 
+    //private bool isBombAllocated = false;
+
     // Use this for initialization
     void Start ()
     {
@@ -65,14 +67,24 @@ public class PlayerController : MonoBehaviour
         //setting our current state to alive
         m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_ALIVE;
 
-        int randSelection = (int)Random.Range(0, MAX_PLAYERS - 1);
-        Debug.Log("Player: " + randSelection);
+        /*int randSelection = (int)Random.Range(0, MAX_PLAYERS - 1);
+        Debug.Log("Player: " + randSelection); */
 
-        // Choose someone to allocate the bomb too
-        if (m_playerID == randSelection)
+        for (uint i = 0; i < MAX_PLAYERS; ++i)
         {
-            m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_BOMB;
-        }
+            if (m_playerID == i)
+            {
+                verticalAxis = "P" + (i + 1) + "_Vertical";
+                horizontalAxis = "P" + (i + 1) + "_Horizontal";
+
+            }
+            // Choose someone to allocate the bomb too
+            /*if (m_playerID == randSelection && !isBombAllocated)
+            {
+                m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_BOMB;
+                isBombAllocated = true;
+            }*/
+        }        
     }
 	
 	// Update is called once per frame
@@ -99,15 +111,17 @@ public class PlayerController : MonoBehaviour
                 {
                     m_rigidBody.AddForce(movementDirection * (playerSpeed + speedBoost) * Time.deltaTime);
                     r_bomb.SetActive(true);
-                    Debug.Log("Bomb!");
+                    //Debug.Log("Bomb!");
                     break;
                 }
             //if player is dead
             case E_PLAYER_STATE.E_PLAYER_STATE_DEAD:
                 {
-                    //play death animation;
-                    r_bomb.SetActive(false);
-                    // TODO: play shrink animation?
+                    // Particle effect bomb (explosion)
+                    r_bombParticleEffect.SetActive(true);
+                    // actions to perform after a certain time
+                    uint uiBombEffectTimer = 6;
+                    Invoke("BombEffectDead", uiBombEffectTimer);
                     Debug.Log("Dead :(");
                     break;
                 }
@@ -119,6 +133,12 @@ public class PlayerController : MonoBehaviour
         }
 	}
 
+    void BombEffectDead()
+    {
+        r_bomb.SetActive(false);
+        Destroy(this.gameObject);
+    }
+
     public E_PLAYER_STATE ChangeStateBomb()
     {
         return m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_BOMB;
@@ -128,10 +148,10 @@ public class PlayerController : MonoBehaviour
     {
         return m_eCurrentPlayerState = E_PLAYER_STATE.E_PLAYER_STATE_DEAD;
     }
-    
-    public void SetPlayerID(uint a_uiPlayerID)
+
+    public uint GetPlayerID()
     {
-        m_playerID = a_uiPlayerID;
+        return m_playerID;
     }
 
     public void SetPlayerID(uint a_uiPlayerID)

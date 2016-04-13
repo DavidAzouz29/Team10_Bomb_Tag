@@ -30,27 +30,29 @@ public class PlayerManager : MonoBehaviour
     public GameObject r_Player; // Referance to a player.
     public Vector3 v3PlayerPosition = Vector3.zero;
 
-    public Color[] colorsArray;
+    public Color[] colorsArray = new Color[MAX_PLAYERS];
+    public PlayerController[] uiPlayerArray = new PlayerController[MAX_PLAYERS]; //TODO: private
 
     //----------------------------------
     // PRIVATE VARIABLES
     //----------------------------------
-    public PlayerController[] uiPlayerArray = new PlayerController[MAX_PLAYERS]; //TODO: private
     private PlayerController r_PlayerController; // Referance to a player.
     private float fTerrRadius = 0.8f;
+    private uint randSelection;
+
     // Use this for initialization
     void Start ()
     {
         v3PlayerPosition.y = 0.39f;
 
         // Array of colors
-        colorsArray[0] = Color.red;
-        colorsArray[1] = Color.yellow;
-        colorsArray[2] = Color.green;
-        colorsArray[3] = Color.blue;
+        colorsArray[0] = new Vector4(Color.red.r,   Color.red.g,    Color.red.b,    0.30f);
+        colorsArray[1] = new Vector4(Color.yellow.r,Color.yellow.g, Color.yellow.b, 0.30f);
+        colorsArray[2] = new Vector4(Color.green.r, Color.green.g,  Color.green.b,  0.30f);
+        colorsArray[3] = new Vector4(Color.blue.r,  Color.blue.g,   Color.blue.b,   0.30f);
 
-        /* int randSelection = (int)Random.Range(0, MAX_PLAYERS - 1);
-        Debug.Log("Player: " + randSelection); */
+        randSelection = (uint)Random.Range(0, MAX_PLAYERS - 1);
+        Debug.Log("Player: " + randSelection);
 
         //Loop through and create our players.
         for (uint i = 0; i < MAX_PLAYERS; ++i)
@@ -58,26 +60,26 @@ public class PlayerManager : MonoBehaviour
             v3PlayerPosition.x = Random.Range(-fTerrRadius, fTerrRadius); //
             v3PlayerPosition.z = Random.Range(-fTerrRadius, fTerrRadius); //
             Object j = Instantiate(r_Player, v3PlayerPosition, r_Player.transform.rotation);
-            MeshRenderer mesh = ((GameObject)j).GetComponentInChildren<MeshRenderer>();
+            MeshRenderer[] mesh = ((GameObject)j).GetComponentsInChildren<MeshRenderer>();
             // Set Color to color in array
-            mesh.sharedMaterial.SetColor("_Color", colorsArray[i]);
+            for(ushort k = 0; k < MAX_PLAYERS; ++k)
+            {
+                mesh[k].material.SetColor("_Color", colorsArray[i]);
+            }
             r_PlayerController = ((GameObject)j).GetComponent<PlayerController>();
             r_PlayerController.SetPlayerID(i);
 
             uiPlayerArray[i] = r_PlayerController;
             Debug.Log(v3PlayerPosition);
-
+            /* Select a player to assign the bomb to
+            if (i == randSelection)
+            {
+                r_PlayerController.ChangeStateBomb();
+            } */
             /* r_PlayerController = GetComponent<PlayerController>();
-            r_PlayerMesh = r_PlayerController.GetComponentInChildren<MeshRenderer>(); */
-            // Set Color to color in array
-            //r_PlayerMesh.sharedMaterial.SetColor("_Color", colorsArray[i]);
-            //r_PlayerController.SetPlayerID(i);            
+            //r_PlayerController.SetPlayerID(i); */
         }
-        //uiPlayerArray[(int)randSelection].SetStateDead();
-        /*if (r_PlayerController.GetPlayerID() == randSelection)
-        {
-            r_PlayerController.SetStateBomb(); // ChangeStateBomb();
-        } */
+        uiPlayerArray[(int)randSelection].ChangeStateBomb();
     }
 	
 	// Update is called once per frame
@@ -85,4 +87,9 @@ public class PlayerManager : MonoBehaviour
     {
 	    
 	}
+
+    /*uint GetRandSelection()
+    {
+        return randSelection;
+    }*/
 }
