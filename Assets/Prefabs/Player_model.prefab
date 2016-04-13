@@ -153,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131622}
   m_LocalRotation: {x: -0.71098363, y: 0, z: 0, w: 0.70320857}
-  m_LocalPosition: {x: 0, y: 0.24, z: -0.003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.23614669, y: 0.23614694, z: 0.23614694}
   m_Children: []
   m_Father: {fileID: 22414652}
@@ -365,11 +365,17 @@ MonoBehaviour:
   playerSpeed: 100
   speedBoost: 5
   r_bomb: {fileID: 159418}
+  r_bombParticleEffect: {fileID: 131622}
   r_camera: {fileID: 0}
   verticalAxis: P1_Vertical
   horizontalAxis: P1_Horizontal
+  colorsArray:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
   m_playerID: 0
-  m_eCurrentPlayerState: 0
+  m_eCurrentPlayerState: 2
 --- !u!135 &13512234
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1936,7 +1942,7 @@ RectTransform:
   m_GameObject: {fileID: 159418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children:
   - {fileID: 458316}
   m_Father: {fileID: 425900}
@@ -1952,7 +1958,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 0.00001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181914}
